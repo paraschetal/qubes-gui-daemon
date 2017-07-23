@@ -19,7 +19,7 @@
 #
 #
 
-CFLAGS+=-I../include/ -g -O2 -Wall -Wextra -Werror -pie -fPIC \
+CFLAGS+=-I../include/ -g -O2 -Wall -Wextra -Werror -fPIC \
 		`pkg-config --cflags libconfig` \
 		`pkg-config --cflags libnotify` \
 		`pkg-config --cflags libpng` \
