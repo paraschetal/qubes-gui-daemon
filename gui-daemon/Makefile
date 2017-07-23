@@ -19,7 +19,6 @@
 #
 #
 
-CC=gcc
 CFLAGS+=-I../include/ -g -O2 -Wall -Wextra -Werror -pie -fPIC \
 		`pkg-config --cflags libconfig` \
 		`pkg-config --cflags libnotify` \
