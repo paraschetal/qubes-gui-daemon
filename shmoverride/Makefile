@@ -22,12 +22,11 @@
 
 CFLAGS+=-g -O2 -I../include/ -fPIC -Wall -Wextra -Werror \
 		-DBACKEND_VMM_$(BACKEND_VMM)
-CC=gcc
 
 all: shmoverride.so X-wrapper-qubes
 
 shmoverride.so: shmoverride.o list.o
-	gcc -shared -o shmoverride.so shmoverride.o list.o -ldl -lxenctrl
+	$(CC) -shared -o shmoverride.so shmoverride.o list.o -ldl -lxenctrl
 
 list.o: ../common/list.c
 	$(CC) $(CFLAGS) -shared -c -o list.o ../common/list.c
