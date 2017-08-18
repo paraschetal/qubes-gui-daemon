@@ -1,4 +1,3 @@
-CC=gcc
 CFLAGS=-Wall -Wextra -Werror -g -O2
 VCHANLIBS=`pkg-config --libs vchan-$(BACKEND_VMM)`
 VCHANCFLAGS=`pkg-config --cflags vchan-$(BACKEND_VMM)`
