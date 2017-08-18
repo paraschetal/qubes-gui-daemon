@@ -41,19 +41,19 @@ dom0: gui-daemon/qubes-guid shmoverride/shmoverride.so shmoverride/X-wrapper-qub
 		pulse/pacat-simple-vchan screen-layout-handler/watch-screen-layout-changes
 
 gui-daemon/qubes-guid:
-	(cd gui-daemon; $(MAKE))
+	(cd gui-daemon; scan-build $(MAKE))
 
 shmoverride/shmoverride.so:
-	(cd shmoverride; $(MAKE) shmoverride.so)
+	(cd shmoverride; scan-build $(MAKE) shmoverride.so)
 
 shmoverride/X-wrapper-qubes:
-	(cd shmoverride; $(MAKE) X-wrapper-qubes)
+	(cd shmoverride; scan-build $(MAKE) X-wrapper-qubes)
 	
 pulse/pacat-simple-vchan:
-	$(MAKE) -C pulse pacat-simple-vchan
+	scan-build $(MAKE) -C pulse pacat-simple-vchan
 
 screen-layout-handler/watch-screen-layout-changes:
-	$(MAKE) -C screen-layout-handler watch-screen-layout-changes
+	scan-build $(MAKE) -C screen-layout-handler watch-screen-layout-changes
 
 rpms: rpms-dom0 rpms-vm
 	rpm --addsign rpm/x86_64/*$(VERSION)*.rpm

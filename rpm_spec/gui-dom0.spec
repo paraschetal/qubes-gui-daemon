@@ -56,6 +56,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	libnotify-devel
 BuildRequires:	xen-devel
 BuildRequires:	dbus-glib-devel
+BuildRequires:  clang-analyzer
 BuildRequires:	help2man
 BuildRequires:	gcc
 BuildRequires:	qubes-core-libs-devel >= 1.6.1
